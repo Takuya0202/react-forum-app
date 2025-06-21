@@ -1,8 +1,7 @@
-import './App.css'
-import Header from './components/Header';
-import getPosts from './api/GetPosts';
-import PostCard from './components/PostCard';
-import Footer from './components/Footer';
+import Header from '../components/Header';
+import getPosts from '../api/GetPosts';
+import PostCard from '../components/PostCard';
+import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
 export default function home(){
   // スレッド一覧を取得

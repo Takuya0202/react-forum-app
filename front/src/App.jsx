@@ -2,13 +2,23 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './react-router-dom/Home'
+import Create from './react-router-dom/Create'
+import NotFound from './react-router-dom/NotFound'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/threads/new' element={<Create />} />
+          <Route path='/*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -29,7 +39,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <p className='text-red-600'>HotReloadddd</p>
-      <p className='text-2xl text-red-500'>Persona5</p>
+      <p className='text-2xl text-red-500'>Persona5</p> */}
     </>
   )
 }
