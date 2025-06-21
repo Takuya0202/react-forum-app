@@ -2,6 +2,7 @@ import './App.css'
 import Header from './components/Header';
 import getPosts from './api/GetPosts';
 import PostCard from './components/PostCard';
+import Footer from './components/Footer';
 import { useEffect, useState } from 'react';
 export default function home(){
   // スレッド一覧を取得
@@ -18,8 +19,9 @@ export default function home(){
   return(
     <div className='bg-slate-100'>
       <Header />
-      <p>スレッド中身</p>
+      <p className='mb-3'>直近10件のスレッド一覧</p>
       <PostCard posts={posts} />
+      <Footer />
     </div>
   );
 }
