@@ -5,7 +5,8 @@ const CancelButton = () => {
   const nav = useNavigate();
   return (
     <div>
-      <button onClick={() => {nav(-1)}} className='px-[30px] py-[10px] rounded-md border-2 border-black'>戻る</button>
+      <button onClick={() => {nav(-1)}} className='px-[30px] py-[10px] rounded-md bg-black text-white w-[120px]'
+        type='button'>戻る</button>
     </div>
   )
 }

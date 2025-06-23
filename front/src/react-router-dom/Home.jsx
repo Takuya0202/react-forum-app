@@ -16,10 +16,12 @@ export default function Home(){
 
 
   return(
-    <div className='bg-slate-100'>
+    <div className='flex flex-col h-screen'>
       <Header />
-      <p className='mb-3'>直近10件のスレッド一覧</p>
-      <PostCard posts={posts} />
+      <main className='flex-grow'>
+        <p className='mb-3'>直近10件のスレッド一覧</p>
+        <PostCard posts={posts} />
+      </main>
       <Footer />
     </div>
   );
