@@ -20,7 +20,7 @@ export default function Home(){
     <div className='flex flex-col h-screen'>
       <Header />
       <main className='flex-grow'>
-        <p className='mb-3'>直近10件のスレッド一覧</p>
+        <h2 className='m-3 text-xl font-semibold'>直近10件のスレッド一覧</h2>
         <PostCard posts={posts} />
       </main>
       <Footer />
