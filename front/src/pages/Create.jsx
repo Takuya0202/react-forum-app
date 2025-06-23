@@ -1,10 +1,10 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import CancelButton from "../components/CancelButton";
+import Header from "../components/common/Header";
+import Footer from "../components/common/Footer";
+import CancelButton from "../components/common/CancelButton";
 import { useState } from "react";
-import PostPosts from "../api/PostPosts";
+import PostThreads from "../api/PostThreads";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/Button";
+import Button from "../components/common/Button";
 export default function Create(){
   const [title,setTitle] = useState('');
   const [msg,setMsg] = useState('スレッドタイトルを設定')
@@ -15,7 +15,7 @@ export default function Create(){
       setMsg('タイトルが未入力です。');
     }
     else{
-      await PostPosts({title})
+      await PostThreads(title);
       nav('/');
     }
   }

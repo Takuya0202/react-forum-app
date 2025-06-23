@@ -1,16 +1,16 @@
-const url = 'https://railway.bulletinboard.techtrain.dev/threads'
-async function getPosts() {
+async function GetPosts(threadId) {
+  const url = `https://railway.bulletinboard.techtrain.dev/threads/${threadId}/posts`;
   try {
     const res = await fetch(url);
     if (!res.ok) {
-      throw new Error(`スレッドの一覧取得に失敗しました。ステータス：${res.status}`)
+      throw new Error(`スレットの取得に失敗しました。ステータス：${res.status}`)
     }
     const data = await res.json();
-    console.log(data);
-    return data
+    // console.log(data['posts']);
+    return data.posts;
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 }
 
-export default getPosts;
+export default GetPosts;

@@ -1,5 +1,5 @@
 const url = 'https://railway.bulletinboard.techtrain.dev/threads';
-async function PostPosts({title}) {
+async function PostThreads(title) {
   // 空文字なら許可しない
   if (title.trim() === '') {
     console.log('タイトルが未入力です。')
@@ -22,4 +22,4 @@ async function PostPosts({title}) {
   }
 }
 
-export default PostPosts;
+export default PostThreads;

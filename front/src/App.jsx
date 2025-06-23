@@ -1,15 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './react-router-dom/Home'
-import Create from './react-router-dom/Create'
-import NotFound from './react-router-dom/NotFound'
-import Show from './react-router-dom/Show'
+import Home from './pages/Home'
+import Create from './pages/Create'
+import NotFound from './pages/NotFound'
+import Show from './pages/Show'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <BrowserRouter>

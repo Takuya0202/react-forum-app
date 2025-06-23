@@ -1,14 +1,14 @@
-import Header from '../components/Header';
-import getPosts from '../api/GetPosts';
+import Header from '../components/common/Header';
+import GetThreads from '../api/GetThreads';
 import PostCard from '../components/PostCard';
-import Footer from '../components/Footer';
+import Footer from '../components/common/Footer';
 import { useEffect, useState } from 'react';
 export default function Home(){
   // スレッド一覧を取得
   const [posts,setPosts] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
-      const data = await getPosts();
+      const data = await GetThreads();
       console.log(data);
       setPosts(data);
     }

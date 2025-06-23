@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import GetPost from '../api/GetPost';
+import Header from '../components/common/Header'
+import Footer from '../components/common/Footer'
+import GetPosts from '../api/GetPosts';
 import PostCard from '../components/PostCard';
 import ReplyCard from '../components/ReplyCard';
 import { useLocation, useNavigate } from 'react-router-dom';
-import CancelButton from '../components/CancelButton';
-import Button from '../components/Button';
-import PostPost from '../api/PostPost';
+import CancelButton from '../components/common/CancelButton';
+import Button from '../components/common/Button';
+import PostPosts from '../api/PostPosts';
 
 const Show = () => {
   // 画面遷移時に受け取る
   const location = useLocation();
   const {title , threadId } = location.state;
-  const nav = useNavigate();
+  
 
   const [posts,setPosts] = useState([]);
   const [reply,setReply] = useState('');
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const data = await GetPost({threadId});
-      // console.log(`dataの中身：${data}`);
-      setPosts(data);
-      // console.log(`postsの中身：${posts}`)
+
+  const fetchPosts = async () => {
+    const data = await GetPosts(threadId);
+    setPosts(data);
     }
-    fetchPosts();
+  useEffect(() => {
+  fetchPosts();
   },[])
 
   const handleSubmit = async (event) => {
@@ -33,8 +32,9 @@ const Show = () => {
       return
     }
     else{
-      await PostPost({threadId,reply});
-      nav('/');
+      await PostPosts({threadId,reply});
+      setReply('');
+      fetchPosts();
     }
   }
 
