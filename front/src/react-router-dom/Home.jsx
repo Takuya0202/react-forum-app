@@ -3,7 +3,7 @@ import getPosts from '../api/GetPosts';
 import PostCard from '../components/PostCard';
 import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
-export default function home(){
+export default function Home(){
   // スレッド一覧を取得
   const [posts,setPosts] = useState([]);
   useEffect(() => {
