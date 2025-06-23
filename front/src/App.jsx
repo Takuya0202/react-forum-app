@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './react-router-dom/Home'
 import Create from './react-router-dom/Create'
 import NotFound from './react-router-dom/NotFound'
+import Show from './react-router-dom/Show'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/threads/new' element={<Create />} />
+          <Route path='/threads/:id' element={<Show />}/>
           <Route path='/*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

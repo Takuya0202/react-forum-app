@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function header(){
+export default function Header(){
   return(
     <header className="bg-black w-full mb-3 flex justify-between items-center">
       <Link to="/">
